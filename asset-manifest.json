@@ -1,0 +1,27 @@
+{
+  "files": {
+    "main.css": "/portfolio/static/css/main.3f9d179b.chunk.css",
+    "main.js": "/portfolio/static/js/main.753282cd.chunk.js",
+    "main.js.map": "/portfolio/static/js/main.753282cd.chunk.js.map",
+    "runtime-main.js": "/portfolio/static/js/runtime-main.2601f1e9.js",
+    "runtime-main.js.map": "/portfolio/static/js/runtime-main.2601f1e9.js.map",
+    "static/js/2.d697f4db.chunk.js": "/portfolio/static/js/2.d697f4db.chunk.js",
+    "static/js/2.d697f4db.chunk.js.map": "/portfolio/static/js/2.d697f4db.chunk.js.map",
+    "index.html": "/portfolio/index.html",
+    "precache-manifest.d843743b8b91414380ed500954379855.js": "/portfolio/precache-manifest.d843743b8b91414380ed500954379855.js",
+    "service-worker.js": "/portfolio/service-worker.js",
+    "static/css/main.3f9d179b.chunk.css.map": "/portfolio/static/css/main.3f9d179b.chunk.css.map",
+    "static/media/callendar.PNG": "/portfolio/static/media/callendar.091e69ca.PNG",
+    "static/media/clock.PNG": "/portfolio/static/media/clock.be0603d6.PNG",
+    "static/media/hangman.PNG": "/portfolio/static/media/hangman.9f925998.PNG",
+    "static/media/main1.jpg": "/portfolio/static/media/main1.ac6c99a0.jpg",
+    "static/media/masterCard.jpg": "/portfolio/static/media/masterCard.ddd59833.jpg",
+    "static/media/realEstate.jpg": "/portfolio/static/media/realEstate.f547fafa.jpg"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.2601f1e9.js",
+    "static/js/2.d697f4db.chunk.js",
+    "static/css/main.3f9d179b.chunk.css",
+    "static/js/main.753282cd.chunk.js"
+  ]
+}
