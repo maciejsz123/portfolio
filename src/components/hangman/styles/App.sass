@@ -1,0 +1,255 @@
+$externalColor: #3268a8
+$background: white
+$marginHeight: 4vh
+$marginWidth: 4vw
+$constPX: 10px
+$heightOfGame: calc(99vh - #{$marginHeight * 2})
+$pantsColor: #3474eb
+$humanColor: #ffe39f
+$leftArm: #03fc24
+$rightArm: #349951
+
+@mixin position($left, $top, $width, $height, $indicator)
+  left: $left * $indicator
+  top: $top * $indicator
+  width: calc((#{$width} + #{$constPX}) * #{$indicator})
+  height: calc((#{$height} + #{$constPX}) * #{$indicator})
+
+#hangmanProject
+  background-color: $externalColor
+  overflow: hidden
+
+.Loading
+  background-color: $background
+  display: grid
+  align-items: center
+  text-align: center
+  font-size: 5em
+  min-height: 100vh
+  margin: 0px
+
+.AppHangman
+  margin: 0px
+  position: relative
+  grid-template-columns: 1fr
+  grid-template-rows: 1fr
+  border-radius: 0px
+  background-color: $background
+  display: grid
+  justify-content: stretch
+  text-align: center
+  min-height: 100vh
+  transition: margin 0.1s
+
+.correct
+  grid-column-start: 1
+  grid-column-end: 1
+  align-content: center
+  display: flex
+  flex-flow: row wrap
+  justify-content: center
+  padding: 1%
+  > div
+    margin: 8px
+
+.missed
+  align-self: start
+  display: flex
+  flex-flow: column nowrap
+  justify-content: space-around
+  min-height: 20vh
+  .header
+    color: red
+  .letters
+    color: blue
+    display: flex
+    flex-flow: row wrap
+    justify-content: center
+    align-items: center
+    font-size: 2rem
+    > *
+      margin: 10px
+
+.endOfGame
+  position: absolute
+  min-width: 300px
+  top: 50%
+  left: 50%
+  transform: translate(-50%, -50%)
+  padding: 100%
+  font-size: 2em
+  z-index: 5
+  opacity: 0.4
+  color: white
+
+.playAgain
+  z-index: 5
+  background: white
+  color: black
+  font-weight: bold
+  padding: 10px
+  margin: 10px
+  font-size: 1em
+  cursor: pointer
+  border: none
+
+.man
+  position: relative
+  min-height: 330px
+  > *
+    position: absolute
+  .horizontalBar
+    @include position(0, 50px, 200px, 5px, 1)
+    border-radius: 0 30px 30px 0
+    background-color: black
+  .verticalBar
+    @include position(180px, 60px, 3px, 15px, 1)
+    background-color: black
+  .head
+    @include position(162px, 83px, 40px, 40px, 1)
+    border-radius: 100%
+    background-color: $humanColor
+    visibility: hidden
+  .neck
+    @include position(180px, 130px, 4px, 5px, 1)
+    background-color: $humanColor
+    visibility: hidden
+  .torso
+    @include position(164px, 140px, 36px, 80px, 1)
+    border-radius: 5px
+    background: linear-gradient(to right, $leftArm 50%, $rightArm 50%)
+    z-index: 3
+    visibility: hidden
+  .leftArm
+    @include position(140px, 137px, 4px, 80px, 1)
+    transform: rotate(30deg)
+    border-radius: 5px
+    z-index: 1
+    background-color: $leftArm
+    visibility: hidden
+  .rightArm
+    @include position(220px, 137px, 4px, 80px, 1)
+    transform: rotate(-30deg)
+    border-radius: 5px
+    z-index: 1
+    background-color: $rightArm
+    visibility: hidden
+  .leftHand
+    @include position(116px, 217px, 5px, 5px, 1)
+    transform: rotate(30deg)
+    border-radius: 5px
+    z-index: 0
+    background-color: $humanColor
+    visibility: hidden
+  .rightHand
+    @include position(244px, 217px, 5px, 5px, 1)
+    transform: rotate(-30deg)
+    border-radius: 5px
+    z-index: 0
+    background-color: $humanColor
+    visibility: hidden
+  .leftLeg
+    @include position(150px, 220px, 5px, 80px, 1)
+    z-index: 1
+    transform: rotate(20deg)
+    border-radius: 5px
+    background-color: $pantsColor
+    visibility: hidden
+  .rightLeg
+    @include position(209px, 220px, 5px, 80px, 1)
+    z-index: 1
+    transform: rotate(-20deg)
+    border-radius: 5px
+    background-color: $pantsColor
+    visibility: hidden
+  .leftFoot
+    @include position(122px, 302px, 17px, 2px, 1)
+    z-index: 0
+    transform: rotate(22deg)
+    border-radius: 5px
+    background-color: $humanColor
+    visibility: hidden
+  .rightFoot
+    @include position(225px, 302px, 17px, 2px, 1)
+    z-index: 0
+    transform: rotate(-22deg)
+    border-radius: 5px
+    background-color: $humanColor
+    visibility: hidden
+
+.letterInput
+  border: 1px solid black
+  background-color: #68e86b
+  display: flex
+  align-items: center
+  justify-content: center
+  border-radius: 5px
+  width: 40px
+  height: 40px
+
+@media only screen and (min-width: 576px)
+
+  .AppHangman
+    margin: $marginHeight $marginWidth
+    grid-template-columns: 1fr 1fr
+    grid-template-rows: 2fr 1fr
+    min-height: $heightOfGame
+    border-radius: 7px
+
+  .correct
+    grid-column-start: 1
+    grid-column-end: 3
+
+  .endOfGame
+    font-size: 2.5em
+
+  .playAgain
+    margin: 10px
+    padding: 10px
+
+@media only screen and (min-width: 850px)
+  .AppHangman
+    margin: $marginHeight $marginWidth
+    grid-template-columns: 1fr 2fr
+    grid-template-rows: 2fr 1fr
+    min-height: $heightOfGame
+    border-radius: 7px
+
+  .correct
+    grid-column-start: 1
+    grid-column-end: 3
+
+  .man
+    min-height: 430px
+    .horizontalBar
+      @include position(0px, 50px, 200px, 5px, 1.3)
+    .verticalBar
+      @include position(180px, 60px, 3px, 15px, 1.3)
+    .head
+      @include position(162px, 83px, 40px, 40px, 1.3)
+    .neck
+      @include position(180px, 130px, 4px, 5px, 1.3)
+    .torso
+      @include position(164px, 140px, 36px, 80px, 1.3)
+    .leftArm
+      @include position(140px, 137px, 4px, 80px, 1.3)
+    .rightArm
+      @include position(220px, 137px, 4px, 80px, 1.3)
+    .leftHand
+      @include position(116px, 217px, 5px, 5px, 1.3)
+    .rightHand
+      @include position(244px, 217px, 5px, 5px, 1.3)
+    .leftLeg
+      @include position(150px, 220px, 5px, 80px, 1.3)
+    .rightLeg
+      @include position(209px, 220px, 5px, 80px, 1.3)
+    .leftFoot
+      @include position(122px, 302px, 17px, 2px, 1.3)
+    .rightFoot
+      @include position(225px, 302px, 17px, 2px, 1.3)
+
+  .endOfGame
+    font-size: 3em
+
+  .playAgain
+    font-size: 0.8em

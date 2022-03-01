@@ -1,0 +1,74 @@
+body {
+  background-color: beige
+}
+
+#clock {
+  position: relative;
+  top: 45vh;
+  left: 50%;
+  height: 200px;
+  width: 200px;
+  border: 5px solid orange;
+  border-radius: 100%;
+  transform: translate(-50%, -50%);
+  background-image: radial-gradient(transparent 60%, grey);
+  box-shadow: 2px 7px 20px grey, -2px 7px 20px grey;
+  opacity: 0.9;
+}
+
+#hourClocksHand {
+  position: absolute;
+  top: 20%;
+  left: 49%;
+  width: 5px;
+  background-image: linear-gradient(grey 50%, transparent 50%);
+  border-radius: 50% 50% 0 0;
+  height: 60%;
+  animation: moveClock 43200s steps(3600) infinite;
+}
+#minuteClocksHand {
+  position: absolute;
+  top: 10%;
+  left: 49%;
+  width: 3.5px;
+  background-image: linear-gradient(black 50%, transparent 50%);
+  border-radius: 50% 50% 0 0;
+  height: 80%;
+  animation: moveClock 3600s steps(360) infinite;
+}
+#secondClocksHand {
+  position: absolute;
+  top: 5%;
+  left: 49%;
+  width: 2px;
+  background-image: linear-gradient(tomato 50%, transparent 50%);
+  border-radius: 50% 50% 0 0;
+  height: 90%;
+  animation: moveClock 60s steps(60) infinite;
+}
+#center {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 3%;
+  height: 3%;
+  border-radius: 100%;
+  border: 1px solid beige;
+  background-color: beige;
+  transform: translate(-50%, -50%);
+}
+
+@keyframes moveClock {
+  from{transform: rotate(0deg);}
+  to{transform: rotate(360deg);}
+}
+
+.line {
+  opacity: 0.7;
+  position: absolute;
+  width: 3px;
+  height: 95%;
+  top: 2.5%;
+  left: 49%;
+  background-image: linear-gradient(transparent 95%, black 5%);
+}

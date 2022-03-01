@@ -1,0 +1,422 @@
+$font1: 'Open Sans', sans-serif
+$font2: 'Lato', sans-serif
+$font3: 'Dosis', sans-serif
+
+$color1: #4b6cc1
+$color2: #06BC9B
+$color3: #fff
+$color4: #f8efe4
+$color5: #4D4384
+$color6: #3A1821
+
+$emtpyBar: #e8eaeb
+$filledBar: #00a1b3
+$barText: #00c8de
+
+html
+  scroll-behavior: smooth
+
+body
+  margin: 0
+  padding: 0
+  font-family: $font2
+  color: $color6
+
+li
+  list-style-type: none
+
+ul
+  margin: 0
+  padding: 0
+
+a
+  text-decoration: none
+  color: black
+
+#header
+  background-color: $color4
+  position: sticky
+  z-index: 10
+  top: 0
+  border-bottom: 2px solid $color5
+
+.headerul
+  display: flex
+  flex-flow: row
+  justify-content: flex-end
+  padding: 5px 20%
+  & > li
+    padding: 5px 2%
+    margin: 5px 3%
+    z-index: 1
+    & :hover
+      color: $color2
+      padding: 15px 2%
+      transition: 0.4s
+
+.hamburger
+  z-index: 3
+  position: absolute
+  left: 5px
+  top: 5px
+  display: none
+  cursor: pointer
+  padding: 20px
+  margin: 5px
+  & > *
+    width: 35px
+    height: 5px
+    background: white
+    border: 0.5px solid #bdbdbd
+    margin: 5px
+    border-radius: 3px
+    transition: transform 0.2s
+
+.clicked-hamburger
+  & > div:nth-child(1)
+    transform: rotate(45deg) translate(20%)
+  & > div:nth-child(2)
+    display: none
+  & > div:nth-child(3)
+    transform: rotate(-45deg) translate(20%)
+
+.hamburger-active-display
+  display: block !important
+
+#main
+  height: 100vh
+  display: flex
+  flex-flow: column nowrap
+  text-align: center
+  justify-content: center
+  align-items: center
+  background: $color2
+  color: $color3
+  .btn-main
+    border: 2px solid $color3
+    padding: 15px
+    font-size: 23px
+    background: transparent
+    transition: 0.4s
+    z-index: 2
+    &:hover
+      background: $color6
+      cursor: pointer
+      .btn-arrow
+        transform: rotate(45deg)
+
+  .main-span
+    color: $color4
+  .btn-arrow
+    display: inline-block
+    margin: 3px 10px
+    transition: 0.4s
+    transform: rotate(-45deg)
+    border: solid $color1
+    border-width: 0 3px 3px 0
+    padding: 5px
+
+.headline-div
+  display: flex
+  flex-flow: column nowrap
+  align-items: center
+.headline
+  margin: 0
+  padding: 3vh
+  text-align: center
+  border-bottom: 5px solid $color5
+
+#experimentsComp
+  background-color: $color4
+  padding: 45px 0
+  overflow: hidden
+
+#projectsComp
+  background-color: $color3
+  padding: 45px 0
+  overflow: hidden
+
+#skillsComp
+  background-color: $color3
+  padding: 45px 0
+  overflow: hidden
+
+#projects
+  padding: 5vh 5vw
+  display: flex
+  flex-flow: row wrap
+  justify-content: space-around
+  & .project-element
+    justify-content: center
+    align-items: center
+    height: 50%
+    width: 30%
+    background-color: #defce3
+    border-radius: 10px
+    margin: 3px
+    .project-image
+      position: relative
+      margin: 10px
+      display: flex
+      overflow: hidden
+      border-radius: 10px
+    .main-image
+      height: 100%
+      width: 100%
+      transition: 0.4s
+    .icon-image
+      position: absolute
+      z-index: 2
+      cursor: pointer
+      opacity: 0
+      transition: 0.4s
+    .git-image
+      bottom: 30px
+      left: 45px
+    .glass-image
+      bottom: 10%
+      left: 50%
+      transform: translate(-50%, -50%)
+    .center-text
+      position: absolute
+      top: 30%
+      left: 50%
+      transform: translate(-50%,-50%)
+      color: transparent
+      font-size: 30px
+      transition: 0.4s
+  & :hover
+    .main-image
+      transform: scale(1.1)
+      transition: 0.4s
+      background: rgba(black, 0.5)
+    .icon-image
+      transition: 0.4s
+      opacity: 1
+    .center-text
+      transform: 0.4s
+      color: $color3
+      text-shadow: 1px 1px 1px black
+
+#experiments
+  padding: 5vh 5vw
+  display: flex
+  flex-flow: row wrap
+  justify-content: flex-start
+  .project-element
+    background-color: #e5e8bc
+    border-radius: 10px
+    margin: 3px
+    max-width: 195px
+  .project-image
+    position: relative
+    border-radius: 5px
+    margin: 10px
+    height: 175px
+    width: 175px
+    display: flex
+    justify-content: center
+    align-items: center
+    overflow: hidden
+  .main-image
+    height: 100%
+    width: 100%
+    transition: 0.4s
+    z-index: 1
+  .icon-image
+    position: absolute
+    z-index: 2
+    cursor: pointer
+    opacity: 0
+    transition: 0.4s
+  .git-image
+    bottom: 20px
+    left: 25px
+    transform: scale(0.7)
+  .glass-image
+    bottom: 10%
+    left: 50%
+    transform: translate(-50%, -50%) scale(0.5)
+  .center-text
+    position: absolute
+    top: 30%
+    left: 50%
+    transform: translate(-50%,-50%)
+    z-index: 1
+    color: transparent
+    font-size: 20px
+    transition: 0.4s
+  .project-element-overlay
+    position: absolute
+    width: 100%
+    height: 100%
+    background-color: black
+    opacity: 1
+    z-index: 0
+  & :hover
+    .main-image
+      transform: scale(1.1)
+      transition: 0.4s
+      opacity: 0.7
+    .icon-image
+      transition: 0.4s
+      opacity: 1
+    .center-text
+      transform: 0.4s
+      color: $color3
+      text-shadow: 1px 1px 1px black
+
+.technologies
+  font-family: $font3
+  color: #00662f
+  font-size: 20px
+  display: flex
+  flex-flow: row wrap
+  justify-content: center
+  & > div
+    padding: 0px 10px 10px
+
+
+@mixin skill-bar($direction)
+  margin: 10px
+  display: grid
+  justify-self: $direction
+  width: 300px
+
+#skills
+  background-color: $color3
+  display: grid
+  grid-template-columns: 1fr 1fr
+  & .skill-bar:nth-child(2n+2)
+    @include skill-bar(left)
+  & .skill-bar:nth-child(2n+1)
+    @include skill-bar(right)
+  .bar-text
+    padding: 3px
+    color: $color3
+    background-color: $barText
+    font-weight: 700
+    text-align: center
+/*#skills
+  background-color: $color3
+  display: flex
+  flex-flow: column
+  align-items: center
+  & .skill-bar
+    position: relative
+    width: 450px
+    margin: 10px
+    display: grid
+    background-color: $emtpyBar
+    grid-template-columns: 1fr 3fr
+    & .bar-text
+      padding: 3px
+      color: $color3
+      background-color: $barText
+      font-weight: 700
+      text-align: center
+    & .bar
+      display: flex
+      flex-flow: row
+      & .bar-filled
+        background-color: $filledBar
+    & .skill-percent
+      position: absolute
+      right: 10px
+      top: 3px
+
+.bubble
+  position: absolute
+  border-radius: 30px
+  border: 1px solid $color3
+
+.path
+  display: flex
+  flex-flow: row nowrap
+  height: 150px
+.path1
+  background: linear-gradient(190deg, $color3 50%, $color4 50%)
+  width: 50vw
+.path2
+  background: linear-gradient(170deg, $color3 50%, $color4 50%)
+  width: 50vw
+
+.slide-from-left
+  animation: slideFromLeft 0.7s ease
+  opacity: 1
+
+.slide-from-right
+  animation: slideFromRight 0.7s ease
+  opacity: 1
+
+.to-animate
+  opacity: 0
+
+@keyframes slideFromLeft
+  0%
+    transform: translate(-500px)
+    opacity: 0
+  100%
+    opacity: 1
+
+@keyframes slideFromRight
+  0%
+    transform: translate(500px)
+    opacity: 0
+  100%
+    opacity: 1
+
+@media only screen and (max-width: '872px')
+  .to-animate
+    opacity: 1
+  .hamburger
+    display: block
+  .headerul
+    display: none
+    position: absolute
+    background-color: $color3
+    padding: 0
+    margin: 0
+    width: calc(100vw - 17px)
+    text-align: center
+  #projects
+    .project-element
+      width: 45%
+      .main-image
+        transform: scale(1)
+        transition: 0.4s
+        background: rgba(black, 0.5)
+      .icon-image
+        transition: 0.4s
+        opacity: 1
+      .center-text
+        transform: 0.4s
+        color: $color3
+        text-shadow: 1px 1px 1px black
+        font-size: 25px
+  #experiments
+    .main-image
+      transform: scale(1)
+      transition: 0.4s
+      opacity: 0.7
+    .icon-image
+      transition: 0.4s
+      opacity: 1
+    .center-text
+      transform: 0.4s
+      color: $color3
+      text-shadow: 1px 1px 1px black
+  .technologies
+    font-size: 17px
+
+@media only screen and (max-width: '660px')
+  #projects
+    .project-element
+      width: 100%
+  #experiments
+    justify-content: center
+  #skills
+    font-size: 14px
+    grid-template-columns: 1fr
+    & .skill-bar:nth-child(n)
+      justify-self: center
