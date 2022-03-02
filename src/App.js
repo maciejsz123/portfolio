@@ -40,11 +40,7 @@ window.addEventListener('scroll', () => {
     headlineDiv[2].classList.add('slide-from-left');
     headlineDiv[2].classList.remove('to-animate');
   }
-  if(!projects.classList.contains('slide-from-right') && projects.getBoundingClientRect().bottom < windowHeight && windowWidth > 872) {
-    projects.classList.add('slide-from-right');
-    projects.classList.remove('to-animate');
-  }
-  if(!projects.classList.contains('slide-from-right') && projects.getBoundingClientRect().bottom < windowHeight && windowWidth > 872) {
+  if(!projects.classList.contains('slide-from-right') && projects.getBoundingClientRect().bottom < windowHeight+300 && windowWidth > 872) {
     projects.classList.add('slide-from-right');
     projects.classList.remove('to-animate');
   }
